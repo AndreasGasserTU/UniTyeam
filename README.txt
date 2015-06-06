@@ -10,7 +10,11 @@ Iteration 1:
 
 Iteration 2:
 	Planning Game:
+  implementet player movement so far, we decided to add collision
+  detection and simple AI until our first release
+  discussing design issues and setting sail
 	Time:
+    estimated time for iteration 1: 15h
 
 --------Release 1
 
