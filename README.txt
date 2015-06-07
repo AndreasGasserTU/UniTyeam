@@ -16,7 +16,7 @@ Iteration 2:
 	Time:
     estimated time for iteration 1: 15h
 
---------Release 1
+--------Release 1: playable at: http://unityeam.comxa.com/WEBplayer.html
 
 Iteration 3:
 	Planning Game:
