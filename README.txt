@@ -10,7 +10,7 @@ Iteration 1:
 
 Iteration 2:
 	Planning Game:
-  implementet player movement so far, we decided to add collision
+  implement player movement so far, we decided to add collision
   detection and simple AI until our first release
   discussing design issues and setting sail
 	Time:
@@ -20,7 +20,13 @@ Iteration 2:
 
 Iteration 3:
 	Planning Game:
+  enemies disappear if they collide with the player.
+  on collision the player circle grows and slows down at a 
+  specific number of enemy-collisions.
+  we discussed possible improvements in the design and 
+  thought of situations which are not handled yet.
 	Time:
+    estimated time for iteration 1: 15h
 
 Iteration 4:
 	Planning Game:

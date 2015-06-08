@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Movement : MonoBehaviour 
 {
-	public float speed = 6000f;
+	public float speed;
 	
 	void Update ()
 	{

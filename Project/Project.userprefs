@@ -1,8 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Spawn.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\EatEnemy.cs">
     <Files>
-      <File FileName="Assets\Spawn.cs" Line="12" Column="57" />
+      <File FileName="Assets\Spawn.cs" Line="1" Column="1" />
+      <File FileName="Assets\Movement.cs" Line="1" Column="1" />
+      <File FileName="Assets\EatEnemy.cs" Line="30" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
