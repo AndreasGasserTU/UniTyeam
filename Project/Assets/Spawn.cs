@@ -19,11 +19,25 @@ public class Spawn : MonoBehaviour
 
 	void spawning()
 	{
-		spawnPoint.x = Random.Range (-20, 20);
-		spawnPoint.y = Random.Range (-10, 10);
+		spawnPoint.x = getRandomNumber() * 20;
+		spawnPoint.y = getRandomNumber() * 10;
+		//spawnPoint.x = Random.Range(-20, 20);
+		//spawnPoint.y = Random.Range(-10, 10);
 		spawnPoint.z = 0;
+
 		//Instantiate (enemies [UnityEngine.Random.Range (0, enemies.Length - 1)], spawnPoint, Quaternion.identity);
 		Instantiate (enemies [0], spawnPoint, Quaternion.identity);
 		CancelInvoke ();
+	}
+
+	int getRandomNumber()
+	{
+		int temp = 0; 
+		while(temp == 0)
+		{
+			temp = Random.Range(-1, 2);
+		}
+		print (temp + "");
+		return temp;
 	}
 }

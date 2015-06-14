@@ -11,8 +11,8 @@ public class EatEnemy : MonoBehaviour {
 			if((enemies = GameObject.FindGameObjectsWithTag ("Enemy")).Length <= 1)
 			{
 				Vector3 spawnPoint;
-				spawnPoint.x = Random.Range (-20, 20);
-				spawnPoint.y = Random.Range (-10, 10);
+				spawnPoint.x = getRandomNumber() * 20;
+				spawnPoint.y = getRandomNumber() * 10;
 				spawnPoint.z = 0;
 				Instantiate (enemies [0], spawnPoint, Quaternion.identity);
 			}
@@ -24,7 +24,7 @@ public class EatEnemy : MonoBehaviour {
 
 			if(gameObject.GetComponent<Movement>().speed > 5 && (points % 5) == 0)
 			{
-				gameObject.GetComponent<Movement>().speed--;
+				gameObject.GetComponent<Movement>().speed -= 0.5f;
 			}
 			Destroy (col.gameObject);
 		}
@@ -38,5 +38,16 @@ public class EatEnemy : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	int getRandomNumber()
+	{
+		int temp = 0; 
+		while(temp == 0)
+		{
+			temp = Random.Range (1, -1);
+		}
+
+		return temp;
 	}
 }
