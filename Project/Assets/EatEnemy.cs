@@ -4,8 +4,9 @@ using System.Collections;
 public class EatEnemy : MonoBehaviour {
 
 	public GameObject[] enemies;
-	public int points = 0;
-
+	public int points;
+	string msg = "";
+	public float mytime;
 	void OnCollisionEnter2D(Collision2D col) {
 		if (col.gameObject.tag == "Enemy") {
 			if((enemies = GameObject.FindGameObjectsWithTag ("Enemy")).Length <= 1)
@@ -16,28 +17,39 @@ public class EatEnemy : MonoBehaviour {
 				spawnPoint.z = 0;
 				Instantiate (enemies [0], spawnPoint, Quaternion.identity);
 			}
-			if(transform.localScale.x <= 10)
-			{
-				transform.localScale += new Vector3(0.1F, 0.1F, 0);
-			}
-			points++;
 
-			if(gameObject.GetComponent<Movement>().speed > 5 && (points % 5) == 0)
-			{
-				gameObject.GetComponent<Movement>().speed -= 0.5f;
+			points--;
+			if(points <= 0) {
+				points = 0;
+				GameObject.FindGameObjectWithTag ("Player").GetComponent<Movement>().playerdead = true;
+				msg = "Game Over! Time: " + mytime.ToString("0.00");
 			}
+			Destroy (col.gameObject);
+		}
+		if (col.gameObject.tag == "Life") {
+			points++;
 			Destroy (col.gameObject);
 		}
 	}
 
 	// Use this for initialization
 	void Start () {
-	
+		points = 5;
+		mytime = 0;
 	}
 	
-	// Update is called once per frame
+	// Update is called once per frame  ---- Application.LoadLevel (0);  
 	void Update () {
 	
+	}
+
+	private void OnGUI() {
+		GUI.Label (new Rect (Screen.width/2 - 34, Screen.height/2 - 10, 100, 100), msg);
+		if (GameObject.FindGameObjectWithTag ("Player").GetComponent<Movement> ().playerdead) {
+			if(GUI.Button(new Rect (Screen.width/2 - 50, Screen.height/2 + 30, 100, 30), "Play Again!")){
+				Application.LoadLevel (0);  
+			}
+		}
 	}
 
 	int getRandomNumber()
@@ -49,5 +61,10 @@ public class EatEnemy : MonoBehaviour {
 		}
 
 		return temp;
+	}
+
+	void FixedUpdate() {
+		if(points > 0)
+			mytime += Time.deltaTime;
 	}
 }

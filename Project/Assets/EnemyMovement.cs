@@ -3,31 +3,48 @@ using System.Collections;
 
 public class EnemyMovement : MonoBehaviour 
 { 
+
 	public float moveSpeed;
 
 	Vector3 velocity;
 
-	void Update ()
+	void FixedUpdate ()
 	{
 		transform.Translate(velocity);
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {
-		if (col.gameObject.tag == "RightBorder" 
-		    || col.gameObject.tag == "LeftBorder") {
+		if (col.gameObject.tag == "Border" ) {
+		
+			float x = Random.Range (0f, moveSpeed);
+			float y = moveSpeed - x;
 
-			//transform.position.x = -transform.position.x;
+			if(transform.position.x > 1) {
+				x = -x;
+			}
+
+			if(transform.position.y > 1) {
+				y = -y;
+			}
+			//velocity = new Vector3(x * Time.deltaTime * moveSpeed, 
+			 //                      y * Time.deltaTime * moveSpeed, 0);
+			velocity = new Vector3(x*Time.deltaTime, y*Time.deltaTime, 0);
 		}
 
-		if (col.gameObject.tag == "BottomBorder" 
-			|| col.gameObject.tag == "TopBorder") {
-			//transform.position.y = -transform.position.y;
-		}
+
 	}
 
 	void Start () {
-		moveSpeed = 1f;
-		velocity = new Vector3(Random.Range(-5f, 5f) * Time.deltaTime * moveSpeed, 
-		                       Random.Range(-5f, 5f) * Time.deltaTime * moveSpeed, 0);
+		moveSpeed = 10f;
+		float x = Random.Range (0f, moveSpeed);
+		float y = moveSpeed - x;
+		if (Random.Range (-1f, 1f) > 0) {
+			x = -x;
+		}
+		if (Random.Range (-1f, 1f) > 0) {
+			y = -y;
+		}
+		velocity = new Vector3(x*Time.deltaTime, y*Time.deltaTime, 0);
 	}
+
 }

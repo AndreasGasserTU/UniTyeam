@@ -14,7 +14,7 @@ Iteration 2:
   detection and simple AI until our first release
   discussing design issues and setting sail
 	Time:
-    estimated time for iteration 1: 15h
+    estimated time for iteration 2: 15h
 
 --------Release 1: playable at: http://unityeam.comxa.com/WEBplayer.html
 
@@ -26,10 +26,12 @@ Iteration 3:
   we discussed possible improvements in the design and 
   thought of situations which are not handled yet.
 	Time:
-    estimated time for iteration 1: 15h
+    estimated time for iteration 3: 15h
 
 Iteration 4:
 	Planning Game:
+  finishing release 2, implementing AI, adding GUI.
 	Time:
+    estimated time for iteration 4: 15h
 
---------Release 2
+--------Release 2: playable at: http://unityeam.freeiz.com/WEBplayer.html
